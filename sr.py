@@ -71,8 +71,14 @@ def key_input(event):
     else:
         pass
 
-gpio.output(4, False)
 gpio.output(5, False)
+gpio.output(6, False)
+gpio.output(7, False)
+gpio.output(8, False)
+gpio.output(9, False)
+gpio.output(10, False)
+gpio.output(11, False)
+gpio.output(12, False)
 command = tk.Tk()
 command.bind('<KeyPress>', key_input)
 command.mainloop()
