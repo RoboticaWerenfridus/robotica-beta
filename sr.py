@@ -72,6 +72,7 @@ def key_input(event):
     else:
         pass
 
+init()
 gpio.output(5, False)
 gpio.output(6, False)
 gpio.output(7, False)
