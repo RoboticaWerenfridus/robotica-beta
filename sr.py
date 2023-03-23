@@ -4,14 +4,14 @@ import sys
 import tkinter as tk
 
 gpio.setmode(gpio.BCM)
-    gpio.setup(5, gpio.OUT)
-    gpio.setup(6, gpio.OUT)
-    gpio.setup(7, gpio.OUT)
-    gpio.setup(8, gpio.OUT)
-    gpio.setup(9, gpio.OUT)
-    gpio.setup(10, gpio.OUT)
-    gpio.setup(11, gpio.OUT)
-    gpio.setup(12, gpio.OUT)
+gpio.setup(5, gpio.OUT)
+gpio.setup(6, gpio.OUT)
+gpio.setup(7, gpio.OUT)
+gpio.setup(8, gpio.OUT)
+gpio.setup(9, gpio.OUT)
+gpio.setup(10, gpio.OUT)
+gpio.setup(11, gpio.OUT)
+gpio.setup(12, gpio.OUT)
     
 def lf(tf):
     gpio.output(5, True)
