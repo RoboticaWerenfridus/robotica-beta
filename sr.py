@@ -8,31 +8,24 @@ gpio.setup(5, gpio.OUT)
 gpio.setup(6, gpio.OUT)
 gpio.setup(7, gpio.OUT)
 gpio.setup(8, gpio.OUT)
-gpio.setup(9, gpio.OUT)
-gpio.setup(10, gpio.OUT)
-gpio.setup(11, gpio.OUT)
-gpio.setup(12, gpio.OUT)
     
 def lf(tf):
     gpio.output(5, True)
-    gpio.output(6, True)
+    time.sleep(tf)
     gpio.cleanup()
 
 def lr(tf):
-    gpio.output(7, True)
-    gpio.output(8, True)
+    gpio.output(6, True)
     time.sleep(tf)
     gpio.cleanup()
     
 def rf(tf):
-    gpio.output(9, True)
-    gpio.output(10, True)
+    gpio.output(7, True)
     time.sleep(tf)
     gpio.cleanup()
     
 def rr(tf):
-    gpio.output(11, True)
-    gpio.output(12, True)
+    gpio.output(8, True)
     time.sleep(tf)
     gpio.cleanup()
     
@@ -42,20 +35,12 @@ def init():
     gpio.setup(6, gpio.OUT)
     gpio.setup(7, gpio.OUT)
     gpio.setup(8, gpio.OUT)
-    gpio.setup(9, gpio.OUT)
-    gpio.setup(10, gpio.OUT)
-    gpio.setup(11, gpio.OUT)
-    gpio.setup(12, gpio.OUT)
 
 def stop(tf):
     gpio.output(5, False)
     gpio.output(6, False)
     gpio.output(7, False)
     gpio.output(8, False)
-    gpio.output(9, False)
-    gpio.output(10, False)
-    gpio.output(11, False)
-    gpio.output(12, False)
     sys.exit()
     time.sleep(tf)
     
@@ -87,10 +72,6 @@ gpio.output(5, False)
 gpio.output(6, False)
 gpio.output(7, False)
 gpio.output(8, False)
-gpio.output(9, False)
-gpio.output(10, False)
-gpio.output(11, False)
-gpio.output(12, False)
 command = tk.Tk()
 command.bind('<KeyPress>', key_input)
 command.mainloop()
