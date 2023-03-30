@@ -46,7 +46,7 @@ def stop(tf):
     
 def key_input(event):
     init()
-    print ('key:'), event.char
+    event.char
     key_press = event.char
     sleep_time = 0.030
     
@@ -62,7 +62,7 @@ def key_input(event):
     elif key_press.lower() == 'd':
         rr(sleep_time)
         lf(sleep_time)
-    elif key_press.lower() == 'q':
+    elif key_press.lower() == '<escape>':
         stop(sleep_time)
     else:
         pass
