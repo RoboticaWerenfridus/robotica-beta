@@ -60,6 +60,8 @@ def key_input(event):
         forward(sleep_time)
     elif key_press.lower() == 'a':
         left(sleep_time)
+    elif key_press.lower() == 's':
+        back(sleep_time)
     elif key_press.lower() == 'd':
         right(sleep_time)
     elif key_press.lower() == 'q':
