@@ -36,13 +36,12 @@ def init():
     gpio.setup(7, gpio.OUT)
     gpio.setup(8, gpio.OUT)
 
-def stop(tf):
+def stop():
     gpio.output(5, False)
     gpio.output(6, False)
     gpio.output(7, False)
     gpio.output(8, False)
     sys.exit()
-    time.sleep(tf)
     
 def key_input(event):
     init()
