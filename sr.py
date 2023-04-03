@@ -8,27 +8,9 @@ gpio.setup(5, gpio.OUT)
 gpio.setup(6, gpio.OUT)
 gpio.setup(7, gpio.OUT)
 gpio.setup(8, gpio.OUT)
-    
-def lf(tf):
-    gpio.output(5, True)
-    time.sleep(tf)
-    gpio.cleanup()
+gpio.setwarnings(False)
 
-def lr(tf):
-    gpio.output(6, True)
-    time.sleep(tf)
-    gpio.cleanup()
-    
-def rf(tf):
-    gpio.output(7, True)
-    time.sleep(tf)
-    gpio.cleanup()
-    
-def rr(tf):
-    gpio.output(8, True)
-    time.sleep(tf)
-    gpio.cleanup()
-    
+
 def init():
     gpio.setmode(gpio.BCM)
     gpio.setup(5, gpio.OUT)
@@ -36,37 +18,55 @@ def init():
     gpio.setup(7, gpio.OUT)
     gpio.setup(8, gpio.OUT)
 
-def stop():
+def forward(tf):
+    gpio.output(5, True)
+    gpio.output(7, True)
+    time.sleep(tf)
+    gpio.cleanup()
+    
+def left(tf):
+    gpio.output(6, True)
+    gpio.output(7, True)
+    time.sleep(tf)
+    gpio.cleanup()
+    
+def right(tf):
+    gpio.output(5, True)
+    gpio.output(8, True)
+    time.sleep(tf)
+    gpio.cleanup()
+    
+def back(tf):
+    gpio.output(6, True)
+    gpio.output(8, True)
+    time.sleep(tf)
+    gpio.cleanup()
+    
+def stop(tf):
     gpio.output(5, False)
     gpio.output(6, False)
     gpio.output(7, False)
     gpio.output(8, False)
     sys.exit()
+    time.sleep(tf)
     
 def key_input(event):
     init()
-    event.char
+    print ('key:'), event.char
     key_press = event.char
     sleep_time = 0.030
     
     if key_press.lower() == 'w':
-        lf(sleep_time)
-        rf(sleep_time)
+        forward(sleep_time)
     elif key_press.lower() == 'a':
-        lr(sleep_time)
-        rf(sleep_time)
-    elif key_press.lower() == 's':
-        rr(sleep_time)
-        lr(sleep_time)
+        left(sleep_time)
     elif key_press.lower() == 'd':
-        rr(sleep_time)
-        lf(sleep_time)
-    elif key_press.lower() == '<escape>':
+        right(sleep_time)
+    elif key_press.lower() == 'q':
         stop(sleep_time)
     else:
         pass
 
-init()
 gpio.output(5, False)
 gpio.output(6, False)
 gpio.output(7, False)
