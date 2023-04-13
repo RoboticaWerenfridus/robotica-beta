@@ -7,7 +7,7 @@ gpio.setmode(gpio.BCM)
 gpio.setup(5, gpio.OUT)
 gpio.setup(6, gpio.OUT)
 gpio.setup(7, gpio.OUT)
-gpio.setup(8, gpio.OUT)
+gpio.setup(12, gpio.OUT)
 gpio.setwarnings(False)
 
 
@@ -16,7 +16,7 @@ def init():
     gpio.setup(5, gpio.OUT)
     gpio.setup(6, gpio.OUT)
     gpio.setup(7, gpio.OUT)
-    gpio.setup(8, gpio.OUT)
+    gpio.setup(12, gpio.OUT)
 
 def forward(tf):
     gpio.output(5, True)
@@ -32,13 +32,13 @@ def left(tf):
     
 def right(tf):
     gpio.output(5, True)
-    gpio.output(8, True)
+    gpio.output(12, True)
     time.sleep(tf)
     gpio.cleanup()
     
 def back(tf):
     gpio.output(6, True)
-    gpio.output(8, True)
+    gpio.output(12, True)
     time.sleep(tf)
     gpio.cleanup()
     
@@ -46,7 +46,7 @@ def stop(tf):
     gpio.output(5, False)
     gpio.output(6, False)
     gpio.output(7, False)
-    gpio.output(8, False)
+    gpio.output(12, False)
     sys.exit()
     time.sleep(tf)
     
@@ -72,7 +72,7 @@ def key_input(event):
 gpio.output(5, False)
 gpio.output(6, False)
 gpio.output(7, False)
-gpio.output(8, False)
+gpio.output(12, False)
 command = tk.Tk()
 command.bind('<KeyPress>', key_input)
 command.mainloop()
