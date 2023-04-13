@@ -6,7 +6,7 @@ import tkinter as tk
 gpio.setmode(gpio.BCM)
 gpio.setup(5, gpio.OUT)
 gpio.setup(6, gpio.OUT)
-gpio.setup(7, gpio.OUT)
+gpio.setup(16, gpio.OUT)
 gpio.setup(12, gpio.OUT)
 gpio.setwarnings(False)
 
@@ -15,18 +15,18 @@ def init():
     gpio.setmode(gpio.BCM)
     gpio.setup(5, gpio.OUT)
     gpio.setup(6, gpio.OUT)
-    gpio.setup(7, gpio.OUT)
+    gpio.setup(16, gpio.OUT)
     gpio.setup(12, gpio.OUT)
 
 def forward(tf):
     gpio.output(5, True)
-    gpio.output(7, True)
+    gpio.output(16, True)
     time.sleep(tf)
     gpio.cleanup()
     
 def left(tf):
     gpio.output(6, True)
-    gpio.output(7, True)
+    gpio.output(16, True)
     time.sleep(tf)
     gpio.cleanup()
     
@@ -45,7 +45,7 @@ def back(tf):
 def stop(tf):
     gpio.output(5, False)
     gpio.output(6, False)
-    gpio.output(7, False)
+    gpio.output(16, False)
     gpio.output(12, False)
     sys.exit()
     time.sleep(tf)
@@ -71,7 +71,7 @@ def key_input(event):
 
 gpio.output(5, False)
 gpio.output(6, False)
-gpio.output(7, False)
+gpio.output(16, False)
 gpio.output(12, False)
 command = tk.Tk()
 command.bind('<KeyPress>', key_input)
