@@ -1,2 +1,2 @@
 # robotica-beta
-dit is de beta versie van de normale bestanden
+dit is voor alle bestanden die functies gebruiken die de normale robot niet heeft
