@@ -1,67 +1,63 @@
-import RPi.GPIO as GPIO
+import RPi.GPIO as gpio
 import time
-import curses
+import sys
+import tkinter as tk
 
-# Set GPIO mode to BCM
-GPIO.setmode(GPIO.BCM)
+gpio.setmode(gpio.BCM)
+gpio.setup(17, gpio.OUT)
+gpio.setup(22, gpio.OUT)
+gpio.setwarnings(False)
 
-# Define motor pins
-MOTOR1A = 5
-MOTOR1B = 6
-MOTOR2A = 16
-MOTOR2B = 12
 
-# Set motor pins as outputs
-GPIO.setup(MOTOR1A, GPIO.OUT)
-GPIO.setup(MOTOR1B, GPIO.OUT)
-GPIO.setup(MOTOR2A, GPIO.OUT)
-GPIO.setup(MOTOR2B, GPIO.OUT)
+def init():
+    gpio.setmode(gpio.BCM)
+    gpio.setup(17, gpio.OUT)
+    gpio.setup(22, gpio.OUT)
 
-# Initialize curses for keyboard input
-stdscr = curses.initscr()
-curses.cbreak()
-stdscr.keypad(True)
-stdscr.timeout(100)
+def forward(tf):
+    gpio.output(17, True)
+    gpio.output(22, True)
+    time.sleep(tf)
+    gpio.cleanup()
+    
+def left(tf):
+    gpio.output(17, False)
+    gpio.output(22, True)
+    time.sleep(tf)
+    gpio.cleanup()
+    
+def right(tf):
+    gpio.output(17, True)
+    gpio.output(22, False)
+    time.sleep(tf)
+    gpio.cleanup()
+    
+def stop(tf):
+    gpio.output(17, False)
+    gpio.output(22, False)
+    sys.exit()
+    time.sleep(tf)
+    
+def key_input(event):
+    init()
+    print ('key:'), event.char
+    key_press = event.char
+    sleep_time = 0.030
+    
+    if key_press.lower() == 'w':
+        forward(sleep_time)
+    elif key_press.lower() == 'a':
+        left(sleep_time)
+    elif key_press.lower() == 'd':
+        right(sleep_time)
+    elif key_press.lower() == 'q':
+        stop(sleep_time)
+    else:
+        pass
 
-# Function to stop motors
-def stop_motors():
-    GPIO.output(MOTOR1A, False)
-    GPIO.output(MOTOR1B, False)
-    GPIO.output(MOTOR2A, False)
-    GPIO.output(MOTOR2B, False)
+gpio.output(17, False)
+gpio.output(22, False)
+command = tk.Tk()
+command.bind('<KeyPress>', key_input)
+command.mainloop()
 
-# Main loop for reading keyboard inputs
-try:
-    while True:
-        char = stdscr.getch()
-        if char == ord('w'):  # Move forward
-            GPIO.output(MOTOR1A, True)
-            GPIO.output(MOTOR1B, False)
-            GPIO.output(MOTOR2A, True)
-            GPIO.output(MOTOR2B, False)
-        elif char == ord('a'):  # Turn left
-            GPIO.output(MOTOR1A, False)
-            GPIO.output(MOTOR1B, True)
-            GPIO.output(MOTOR2A, True)
-            GPIO.output(MOTOR2B, False)
-        elif char == ord('s'):  # Move backward
-            GPIO.output(MOTOR1A, False)
-            GPIO.output(MOTOR1B, True)
-            GPIO.output(MOTOR2A, False)
-            GPIO.output(MOTOR2B, True)
-        elif char == ord('d'):  # Turn right
-            GPIO.output(MOTOR1A, True)
-            GPIO.output(MOTOR1B, False)
-            GPIO.output(MOTOR2A, False)
-            GPIO.output(MOTOR2B, True)
-        else:  # Stop motors for any other key
-            stop_motors()
-
-finally:
-    # Clean up GPIO and curses
-    stop_motors()
-    curses.nocbreak()
-    stdscr.keypad(False)
-    curses.echo()
-    curses.endwin()
-    GPIO.cleanup()
