@@ -46,8 +46,10 @@ def back(tf):
     gpio.cleanup()
     
 def stop(tf):
-    gpio.output(4, False)
-    gpio.output(5, False)
+    gpio.output(17, False)
+    gpio.output(18, False)
+    gpio.output(22, False)
+    gpio.output(23, False)
     sys.exit()
     time.sleep(tf)
     
@@ -84,7 +86,6 @@ gpio.output(18, False)
 gpio.output(22, False)
 gpio.output(23, False)
 bd.when_pressed = move
-bd.when_moved = move
 bd.when_released = stop1
 command = tk.Tk()
 command.mainloop()
