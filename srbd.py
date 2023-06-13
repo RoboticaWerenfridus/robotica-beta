@@ -1,5 +1,4 @@
 import RPi.GPIO as gpio
-import time
 import sys
 import tkinter as tk
 from bluedot import BlueDot
