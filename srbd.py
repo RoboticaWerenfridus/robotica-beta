@@ -16,42 +16,36 @@ def init():
 
 init()
 
-def forward(tf):
+def forward():
     gpio.output(17, True)
     gpio.output(18, False)
     gpio.output(22, True)
     gpio.output(23, False)
-    time.sleep(tf)
     
-def left(tf):
+def left():
     gpio.output(17, False)
     gpio.output(18, True)
     gpio.output(22, True)
     gpio.output(23, False)
-    time.sleep(tf)
      
-def right(tf):
+def right():
     gpio.output(17, True)
     gpio.output(18, False)
     gpio.output(22, False)
     gpio.output(23, True)
-    time.sleep(tf)
     
-def back(tf):
+def back():
     gpio.output(17, False)
     gpio.output(18, True)
     gpio.output(22, False)
     gpio.output(23, True)
-    time.sleep(tf)
-    gpio.cleanup()
     
-def stop(tf):
+def stop():
     gpio.output(17, False)
     gpio.output(18, False)
     gpio.output(22, False)
     gpio.output(23, False)
     sys.exit()
-    time.sleep(tf)
     
 def move(pos):
     init()
