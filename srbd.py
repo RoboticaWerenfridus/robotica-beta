@@ -49,16 +49,15 @@ def stop():
     
 def move(pos):
     init()
-    sleep_time = 0.030
     
     if pos.top:
-        forward(sleep_time)
+        forward()
     elif pos.left:
-        left(sleep_time)
+        left()
     elif pos.right:
-        right(sleep_time)
+        right()
     elif pos.bottom:
-        back(sleep_time)
+        back()
 
 def init():
     gpio.setmode(gpio.BCM)
