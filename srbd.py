@@ -24,7 +24,7 @@ def forward(tf):
     time.sleep(tf)
     
 def left(tf):
-    ggpio.output(17, False)
+    gpio.output(17, False)
     gpio.output(18, True)
     gpio.output(22, True)
     gpio.output(23, False)
