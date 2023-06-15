@@ -1,3 +1,5 @@
+#NathanSchalkwijk
+#LucasEwalts
 import RPi.GPIO as gpio
 import time
 import sys
@@ -74,6 +76,8 @@ def key_input(event):
         stop(sleep_time)
     elif key_press.lower() == 's':
         back(sleep_time)
+    elif key_press.lower() == 't':
+        toenter(sleep_time)
     else:
         pass
 
