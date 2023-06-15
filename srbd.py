@@ -1,3 +1,4 @@
+#Nathan Schalkwijk #lucas Ewalts
 import RPi.GPIO as gpio
 import sys
 import tkinter as tk
