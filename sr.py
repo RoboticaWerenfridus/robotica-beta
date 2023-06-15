@@ -1,5 +1,5 @@
-#NathanSchalkwijk
-#LucasEwalts
+print("Nathan Schalkwijk")
+print("Lucas Ewalts")
 import RPi.GPIO as gpio
 import time
 import sys
