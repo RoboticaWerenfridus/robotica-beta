@@ -45,22 +45,22 @@ try:
         speed_motor2 = int(axis_y * max_speed) - int(axis_x * max_speed)
         
         # Map motor speeds to valid duty cycle range
-        speed_motor1_dc = max(0, min(abs(speed_motor1), max_speed))
-        speed_motor2_dc = max(0, min(abs(speed_motor2), max_speed))
+        speed_motor1_dc = max(0, min(abs(speed_motor1), 100))  # Limit to 0-100
+        speed_motor2_dc = max(0, min(abs(speed_motor2), 100))  # Limit to 0-100
         
         if speed_motor1 > 0:
             set_motor_speed(motor1_forward_pwm, speed_motor1_dc)
             set_motor_speed(motor1_backward_pwm, 0)
         else:
             set_motor_speed(motor1_forward_pwm, 0)
-            set_motor_speed(motor1_backward_pwm, -speed_motor1_dc)
+            set_motor_speed(motor1_backward_pwm, speed_motor1_dc)
             
         if speed_motor2 > 0:
             set_motor_speed(motor2_forward_pwm, speed_motor2_dc)
             set_motor_speed(motor2_backward_pwm, 0)
         else:
             set_motor_speed(motor2_forward_pwm, 0)
-            set_motor_speed(motor2_backward_pwm, -speed_motor2_dc)
+            set_motor_speed(motor2_backward_pwm, speed_motor2_dc)
         
         time.sleep(0.05)
 
