@@ -96,7 +96,7 @@ def key_input(event):
 
 # Set your desired speeds (1 to 100)
 speed_motor1 = 100
-speed_motor2 = 98
+speed_motor2 = 100
 
 command = tk.Tk()
 command.bind('<KeyPress>', key_input)
