@@ -41,22 +41,26 @@ try:
         axis_x = joystick.get_axis(0)  # Get X-axis value of joystick
         axis_y = joystick.get_axis(1)  # Get Y-axis value of joystick
         
-        speed_motor1 = int(axis_y * max_speed)  # Calculate speed for motor 1
-        speed_motor2 = int(axis_y * max_speed)  # Calculate speed for motor 2
-        speed_motor1 += int(axis_x * max_speed)  # Adjust motor 1 speed based on X-axis
-        speed_motor2 -= int(axis_x * max_speed)  # Adjust motor 2 speed based on X-axis
+        speed_motor1 = int(axis_y * max_speed) + int(axis_x * max_speed)
+        speed_motor2 = int(axis_y * max_speed) - int(axis_x * max_speed)
         
-        # Apply motor speed limits
-        speed_motor1 = max(-max_speed, min(speed_motor1, max_speed))
-        speed_motor2 = max(-max_speed, min(speed_motor2, max_speed))
+        # Map motor speeds to valid duty cycle range
+        speed_motor1_dc = max(0, min(abs(speed_motor1), max_speed))  # Clamp to [0, max_speed]
+        speed_motor2_dc = max(0, min(abs(speed_motor2), max_speed))
         
-        if abs(axis_x) > 0.1 or abs(axis_y) > 0.1:
-            set_motor_speed(motor1_forward_pwm, speed_motor1)
+        if speed_motor1 > 0:
+            set_motor_speed(motor1_forward_pwm, speed_motor1_dc)
             set_motor_speed(motor1_backward_pwm, 0)
-            set_motor_speed(motor2_forward_pwm, speed_motor2)
+        else:
+            set_motor_speed(motor1_forward_pwm, 0)
+            set_motor_speed(motor1_backward_pwm, speed_motor1_dc)
+            
+        if speed_motor2 > 0:
+            set_motor_speed(motor2_forward_pwm, speed_motor2_dc)
             set_motor_speed(motor2_backward_pwm, 0)
         else:
-            stop_motors()
+            set_motor_speed(motor2_forward_pwm, 0)
+            set_motor_speed(motor2_backward_pwm, speed_motor2_dc)
         
         time.sleep(0.05)
 
