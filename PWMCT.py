@@ -39,7 +39,7 @@ try:
     while True:
         pygame.event.pump()
         axis_x = joystick.get_axis(0)  # Get X-axis value of joystick
-        axis_y = joystick.get_axis(1)  # Get Y-axis value of joystick
+        axis_y = -joystick.get_axis(1)  # Get Y-axis value of joystick and invert
         
         speed_motor1 = int(axis_y * max_speed) + int(axis_x * max_speed)
         speed_motor2 = int(axis_y * max_speed) - int(axis_x * max_speed)
