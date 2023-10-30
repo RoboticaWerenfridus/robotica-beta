@@ -15,6 +15,7 @@ gpio.setup(4, gpio.OUT)
 
 def init():
     gpio.setmode(gpio.BCM)
+    gpio.setup(4, gpio.OUT)
     gpio.setup(17, gpio.OUT)
     gpio.setup(18, gpio.OUT)
     gpio.setup(22, gpio.OUT)
