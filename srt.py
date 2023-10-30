@@ -63,7 +63,7 @@ def stop(tf):
 
 def toeter(tf):
     gpio.output(21, True)
-    time.sleep(tf)
+    time.sleep(1)
     gpio.output(21, False)
     
 def key_input(event):
@@ -83,7 +83,7 @@ def key_input(event):
     elif key_press.lower() == 's':
         back(sleep_time)
     elif key_press.lower() == 't':
-        toeter(1)
+        toeter(sleep_time)
     else:
         pass
 
