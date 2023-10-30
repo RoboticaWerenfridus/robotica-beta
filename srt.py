@@ -82,7 +82,7 @@ def key_input(event):
     elif key_press.lower() == 's':
         back(sleep_time)
     elif key_press.lower() == 't':
-        toeter(5)
+        toeter(1)
     else:
         pass
 
