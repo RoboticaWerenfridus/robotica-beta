@@ -58,6 +58,7 @@ def stop(tf):
     gpio.output(18, False)
     gpio.output(22, False)
     gpio.output(23, False)
+    gpio.output(21, False)
     sys.exit()
     time.sleep(tf)
 
