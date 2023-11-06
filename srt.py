@@ -11,7 +11,7 @@ gpio.setup(17, gpio.OUT)
 gpio.setup(18, gpio.OUT)
 gpio.setup(22, gpio.OUT)
 gpio.setup(23, gpio.OUT)
-gpio.setup(21, gpio.OUT)
+gpio.setup(4, gpio.OUT)
 
 def init():
     gpio.setmode(gpio.BCM)
@@ -58,12 +58,12 @@ def stop(tf):
     gpio.output(18, False)
     gpio.output(22, False)
     gpio.output(23, False)
-    gpio.output(21, False)
+    gpio.output(4, False)
     sys.exit()
     time.sleep(tf)
 
 def toeter(tf):
-    gpio.output(21, True)
+    gpio.output(4, True)
     time.sleep(tf)
     gpio.cleanup()
     
@@ -92,7 +92,7 @@ gpio.output(17, False)
 gpio.output(18, False)
 gpio.output(22, False)
 gpio.output(23, False)
-gpio.output(21, False)
+gpio.output(4, False)
 command = tk.Tk()
 command.bind('<KeyPress>', key_input)
 command.mainloop()
