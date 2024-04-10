@@ -109,6 +109,9 @@ class App(customtkinter.CTk):
         self.volume_switcher = customtkinter.CTkSlider(self.music_frames)
         self.volume_switcher.grid(row=7, column=0, padx=20, pady=10)
 
+        self.loop_button = customtkinter.CTkSwitch(self.music_frames, text=" Loop")
+        self.loop_button.grid(row=8, column=0, padx=20, pady=10)
+
         self.volume_switcher.set(0)
 
         # create third frame
