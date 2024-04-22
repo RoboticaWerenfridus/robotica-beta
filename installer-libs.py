@@ -28,3 +28,10 @@ install_library('bluedot')
 
 install_library('tk')
 
+# Install Flask library
+
+install_library('Flask')
+
+# Install YAML library
+
+install_library('pyyaml')
