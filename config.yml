@@ -1,0 +1,26 @@
+version: beta-1.0.0 #version of web-app program
+
+motors:
+  controller: true #enable if motor controller
+  custom: false #set pins to custom
+  motor-r-: 22
+  motor-l-: 17
+  motor-r+: 5 #set only + of custom, if motor controller is false
+  motor-l+: 4
+  overclock-max: false #overclock motors, only enable if 12v is present
+
+buzzer:
+  enabled: true #enable if buzzer is installed and set the pin
+  pin: 24 #buzzer pin
+  voltage: 3v3 #voltage hooked up to buzzer
+
+anti-crash:
+  enabled: false
+  us-triger: 0
+  us-echo: 0
+  sv-gpio: 0
+
+settings:
+  debug: false #enable terminal debug mode
+  ip: 192.168.1.17 #ip of host
+  port: 8080 #custom port
