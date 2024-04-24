@@ -56,7 +56,6 @@ sudo python custom-libs.py
 
 Then you may execute any of our programs and Enjoy!
 
--
 Windows and MacOS
 -
 You can easily download by going to the `robotica-beta` repository and moving over to `Code V`
