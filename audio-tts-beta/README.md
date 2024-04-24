@@ -28,7 +28,7 @@ Many BUGS, FLAGS and Errors may occor! These are all part of a BETA state!
 
 Post a Issue if you find any! And we will look into them!
 
-openAI
+OpenAI
 ---
 We use openAI to drive our main TTS system! Do know that this falls under copywrite of openAI!
 
