@@ -1,10 +1,8 @@
-===
 TTS-Audio System
 ===
 
 This is the TTS audio system to play and record sounds! Also including #roboticaAI we have TTS-AIAssist! A AI driven assistant
 
----
 Requirements
 ---
 You require these following needs to execute this BETA program:
@@ -20,7 +18,6 @@ Optional Equipment:
 - Bluetooth Adapter
 - Any kind of device with Ubuntu, MacOS, Linux or Windows (Any kind of 64x bit system)
 
----
 BETA
 ---
 This project is still in BETA! We are NOT responsable for Damage of any kind to your device!
@@ -31,19 +28,17 @@ Many BUGS, FLAGS and Errors may occor! These are all part of a BETA state!
 
 Post a Issue if you find any! And we will look into them!
 
----
 openAI
 ---
 We use openAI to drive our main TTS system! Do know that this falls under copywrite of openAI!
 
-> DO NOT trust this AI with ANY of your personal information! It's still AI!
+> DO NOT trust this AI with ANY of your personal information! It's stil AI!
 
----
+
 Installation
 ---
-Follow these steps to install the main system! Note: steps are different depending on your system en specs! LOOK CLOSELY!
+Follow these steps to install the main system! Note: steps are different depending on your system en specs!
 
--
 Linux Forks and RaspiOS
 -
 To install the repository you may first use
