@@ -18,6 +18,25 @@ BORED-GAMES - Fun python games to play if you are bored!
 > [!CAUTION]
 > Some files are marked beta, these files are not finished and may have bugs and glitches that may destroy your device.
 ## Linux Installation
-These files only support a Raspberry Pi ZERO +, using the language Python! Some programs may be able to run, but they will not work on a PC/Laptop without ports to configure!
+-
+To install the repository you may first use
+```
+sudo apt install --upgrade git
+git clone https:/github.com/NathanSchalkwijk/robotica-beta/audio-tts-beta/
+```
+
+To install all the custom libraries, please use our custom script `libs-installer.py`
+```
+cd robotica-beta
+sudo python libs-installer.py
+```
+>[!WARNING]
+>If any issues occur doing any of these steps, make sure you upgrade your OS to the latest version using these commands
+>```sudo apt-get update
+>sudo apt upgrade```
+>Note: This may require a internet connection
+
+Then you may execute any of our programs and Enjoy!
+
 >[!TIP]
 >Update your Python version to `Python3.9` and create a `SE Envoirment` for no bugs and issues with future updates.
