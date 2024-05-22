@@ -18,7 +18,6 @@ BORED-GAMES - Fun python games to play if you are bored!
 > [!CAUTION]
 > Some files are marked beta, these files are not finished and may have bugs and glitches that may destroy your device.
 ## Linux Installation
--
 To install the repository you may first use
 ```
 sudo apt install --upgrade git
@@ -33,7 +32,8 @@ sudo python libs-installer.py
 >[!WARNING]
 >If any issues occur doing any of these steps, make sure you upgrade your OS to the latest version using these commands
 >```sudo apt-get update
->sudo apt upgrade```
+>sudo apt upgrade
+>```
 >Note: This may require a internet connection
 
 Then you may execute any of our programs and Enjoy!
