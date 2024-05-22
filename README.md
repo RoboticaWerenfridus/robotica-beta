@@ -3,18 +3,16 @@ These are all the files for a non-normal robot, created on the WF Robotics group
 
 These are all the explanations of the following types of files:
 
-## File Types
-SR - School Robot, these are for a robot with a Motor Controller and custom settings, change if needed! Warning these are not supported on a NON-Motor Controller robot
+## Containers
 
-C-CT (Controller-CT) - This is controller using a Xbox Controller, supported for Motor Controller & Normal
+We have sorted the files into folders, with multiple names and information contained inside them
 
-TK (Tkinter) - Using this you can control the robot on a window on the robot itself (Pi)
+To get files for your motor controller to control your robot check `sr-only`
 
-WEB (web) - Control of robot using website! REQUIRES WIFI CONNECTION
+If you want to control your robot using a Xbox or Playstation controller, you may need `controller-ct`
 
-AUDIO-TTS (text to speech) - This is used to send command by Microphone! For more info check the README file in the folder
+For a control panel for either Web or on the device itself, you can find this in `tk-beta` and `web-beta`
 
-BORED-GAMES - Fun python games to play if you are bored!
 > [!CAUTION]
 > Some files are marked beta, these files are not finished and may have bugs and glitches that may destroy your device.
 ## Linux Installation
