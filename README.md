@@ -38,3 +38,7 @@ Then you may execute any of our programs and Enjoy!
 
 >[!TIP]
 >Update your Python version to `Python3.9` and create a `SE Envoirment` for no bugs and issues with future updates.
+>[!IMPROVEMENT]
+>To save diskspace you may delete any files in the repository that you do not need!
+>[!CAUTION]
+>Do not delete these following files, these are to configure the scripts! If you move the files, please changes the `path` in the script above to the correct `config.yml` found in `robotica-beta/config/<script name>/config.yml`
