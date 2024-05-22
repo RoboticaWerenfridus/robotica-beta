@@ -8,8 +8,8 @@ These are all the explanations of the following types of files:
 We have sorted the files into folders, with multiple names and information contained inside them
 
 [!NOTE]
->Not all files are stored in folders and some may be found in the other repository
->
+>Not all files are stored in folders and some may be found in the other repository [Robotica-WF](https://github.com/nathanschalkwijk/robotica.wf)
+
 To get files for your motor controller to control your robot check `sr-only`
 
 If you want to control your robot using a Xbox or Playstation controller, you may need `controller-ct`
