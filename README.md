@@ -19,3 +19,5 @@ BORED-GAMES - Fun python games to play if you are bored!
 > Some files are marked beta, these files are not finished and may have bugs and glitches that may destroy your device.
 ## Program Language
 These files only support a Raspberry Pi ZERO +, using the language Python! Some programs may be able to run, but they will not work on a PC/Laptop without ports to configure!
+>[!TIP]
+>Update your Python version to 'Python3.9' for no bugs and issues.
