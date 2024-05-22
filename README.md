@@ -34,7 +34,7 @@ sudo python libs-installer.py
 >```sudo apt-get update
 >sudo apt upgrade
 >```
->Note: This may require a internet connection
+>**Note:** This may require a internet connection
 
 Then you may execute any of our programs and Enjoy!
 
