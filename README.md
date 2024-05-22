@@ -16,6 +16,6 @@ AUDIO-TTS (text to speech) - This is used to send command by Microphone! For mor
 
 BORED-GAMES - Fun python games to play if you are bored!
 > [!CAUTION]
-> That if there is "-beta" after the name these are NOT FINISHED and we are not - -responsable for any damages on your robot!
+> Some files are marked beta, these files are not finished and may have bugs and glitches that may destroy your device.
 ## Program Language
 These files only support a Raspberry Pi ZERO +, using the language Python! Some programs may be able to run, but they will not work on a PC/Laptop without ports to configure!
