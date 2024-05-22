@@ -1,7 +1,7 @@
  # Robotica Beta
 These are all the files for a non-normal robot, created on the WF Robotics group!
 
-These are all the explanations of the following types of files:
+Also funny additions and games can be found here! Aswel as beta items, that aren't done or released and in a beta state!
 
 ## Containers
 
