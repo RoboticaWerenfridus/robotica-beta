@@ -4,8 +4,6 @@ These are all the files for a non-normal robot, created on the WF Robotics group
 These are all the explanations of the following types of files:
 
 ## File Types
-Note that if there is "-beta" after the name these are NOT FINISHED and we are not responsable for any damages on your robot!
-
 SR - School Robot, these are for a robot with a Motor Controller and custom settings, change if needed! Warning these are not supported on a NON-Motor Controller robot
 
 C-CT (Controller-CT) - This is controller using a Xbox Controller, supported for Motor Controller & Normal
@@ -18,5 +16,6 @@ AUDIO-TTS (text to speech) - This is used to send command by Microphone! For mor
 
 BORED-GAMES - Fun python games to play if you are bored!
 
+>> Note that if there is "-beta" after the name these are NOT FINISHED and we are not responsable for any damages on your robot!
 ## Program Language
 These files only support a Raspberry Pi ZERO +, using the language Python! Some programs may be able to run, but they will not work on a PC/Laptop without ports to configure!
