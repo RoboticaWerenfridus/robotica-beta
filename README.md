@@ -11,7 +11,7 @@ We have sorted the files into folders, with multiple names and information conta
 >Do not edit the config files! These are off limits! Only edit of you know what you are doing! We are not responsable for any damage
 
 >[!NOTE]
->Not all files are stored in folders and some may be found in the other repository [Robotica-WF](https://github.com/roboticawerenfridus/robotica.wf)
+>Not all files are stored in folders and some may be found in the other repository [Robotica](https://github.com/roboticawerenfridus/robotica)
 
 To get files for your motor controller to control your robot check `sr-only`
 
