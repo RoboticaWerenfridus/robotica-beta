@@ -1,3 +1,5 @@
+print("created with help from https://aywei.eu")
+
 from vardata import *
 from flask import Flask, render_template
 import time
