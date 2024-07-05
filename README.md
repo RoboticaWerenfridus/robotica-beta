@@ -11,7 +11,7 @@ We have sorted the files into folders, with multiple names and information conta
 >Do not edit the config files! These are off limits! Only edit of you know what you are doing! We are not responsable for any damage
 
 >[!NOTE]
->Not all files are stored in folders and some may be found in the other repository [Robotica-WF](https://github.com/nathanschalkwijk/robotica.wf)
+>Not all files are stored in folders and some may be found in the other repository [Robotica-WF](https://github.com/roboticawerenfridus/robotica.wf)
 
 To get files for your motor controller to control your robot check `sr-only`
 
@@ -26,7 +26,7 @@ For a control panel for either Web or on the device itself, you can find this in
 To install the repository you may first use
 ```
 sudo apt install --upgrade git
-git clone https:/github.com/NathanSchalkwijk/robotica-beta/audio-tts-beta/
+git clone https:/github.com/roboticawerenfridus/robotica-beta/
 ```
 
 To install all the custom libraries, please use our custom script `libs-installer.py`
