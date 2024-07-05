@@ -1,5 +1,5 @@
  # Robotica Beta
-These are all the files for a non-normal robot, created with extra parts, to get these parts go to http://roboticawerenfridus.ddns.net and send an email to Nathan.
+These are all the files for a non-normal robot, created with extra parts, to get these parts go to http://roboticawerenfridus.ddns.net and send an email to Nathan or Mr. Schuckman.
 
 Also funny additions and games can be found here! Aswel as beta items, that aren't done or released and in a beta state!
 
