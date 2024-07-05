@@ -15,7 +15,7 @@ We have sorted the files into folders, with multiple names and information conta
 
 To get files for your motor controller to control your robot check `sr-only`
 
-If you want to control your robot using a Xbox or Playstation controller, you may need `controller-ct`
+If you want to control your robot using a Xbox or Playstation controller, you need `controller-ct`
 
 For a control panel for either Web or on the device itself, you can find this in `tk-beta` and `web-beta`
 
