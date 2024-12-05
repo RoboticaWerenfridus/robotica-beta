@@ -40,6 +40,8 @@ void setup() {
   Serial.begin(9600);
   lcd.begin(16, 2);// set up the LCD's number of columns and rows: 
   analogWrite(8,15);
+  lcd.clear();
+  lcd.print("roboticawerenfridus.nl/github");
 }
 
 void loop() {
