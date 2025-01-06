@@ -100,11 +100,12 @@ try:
             set_motor_speed(motor2_backward_pwm, speed_motor2_dc)
 
         # Check if any button is pressed and execute the corresponding function
-        for button_id in range(5):  # Only check X, Circle, Square, Triangle buttons
+        for button_id in range(4):  # Only check X, Circle, Square, Triangle buttons
             if joystick.get_button(button_id):
                 button_function_mapping.get(button_id, lambda: print(f"Button {button_id} pressed!"))()
-        
-        time.sleep(0.05)
+        if joystick.get_button(10):
+            button_function_mapping.get(10, lambda: print(f"Button 10 pressed!"))()
+        time.sleep(0.10)
 
 except KeyboardInterrupt:
     stop_motors()
