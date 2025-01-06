@@ -14,10 +14,10 @@
 
 
 //ABXY BUTTONS
-#define X_BUTTON 32//23         // A
-#define CIRCLE_BUTTON 35//22    // B
-#define TRIANGLE_BUTTON 0//21  // Y
-#define SQUARE_BUTTON 0//19    // X
+#define X_BUTTON 32         // A
+#define CIRCLE_BUTTON 35    // B
+#define TRIANGLE_BUTTON 21  // Y
+#define SQUARE_BUTTON 19    // X
 
 //TRIGGERS
 #define R1_BUTTON 0
@@ -32,7 +32,7 @@
 
 //JOYSTICKS BUTTONS
 #define R3_BUTTON 0
-#define L3_BUTTON 27
+#define L3_BUTTON 33
 
 //JOYSTICKS
 #define LEFT_VRX_JOYSTICK 26
