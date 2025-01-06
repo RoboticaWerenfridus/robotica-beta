@@ -4,10 +4,10 @@ import sys
 import pygame
 
 gpio.setmode(gpio.BCM)
-gpio.setup(17, gpio.OUT)
-gpio.setup(18, gpio.OUT)
-gpio.setup(22, gpio.OUT)
-gpio.setup(23, gpio.OUT)
+gpio.setup(17, gpio.OUT)  # Motor 1 forward
+gpio.setup(18, gpio.OUT)  # Motor 1 backward
+gpio.setup(22, gpio.OUT)  # Motor 2 forward
+gpio.setup(23, gpio.OUT)  # Motor 2 backward
 gpio.setwarnings(False)
 
 motor1_forward_pwm = gpio.PWM(17, 100)
@@ -34,10 +34,24 @@ joystick = pygame.joystick.Joystick(0)
 joystick.init()
 
 max_speed = 100
+button_actions = {
+    0: "X",  # X button
+    3: "Triangle",  # Triangle button
+    1: "Circle",  # Circle button
+    2: "Square",  # Square button
+}
 
+def handle_button_action(button_id):
+    # Leave button actions empty (no motor control for buttons)
+    action = button_actions.get(button_id)
+    if action:
+        print(f"Button {action} pressed!")
+        # No specific actions for buttons are defined here
+
+# Start the main loop
 try:
     while True:
-        pygame.event.pump()
+        pygame.event.pump()  # Update the joystick events
         axis_x = joystick.get_axis(0)  # Get X-axis value of joystick
         axis_y = -joystick.get_axis(1)  # Get Y-axis value of joystick and invert
         
@@ -61,6 +75,11 @@ try:
         else:
             set_motor_speed(motor2_forward_pwm, 0)
             set_motor_speed(motor2_backward_pwm, speed_motor2_dc)
+
+        # Check if any button is pressed
+        for button_id in range(4):  # Only check X, Circle, Square, Triangle buttons
+            if joystick.get_button(button_id):
+                handle_button_action(button_id)
         
         time.sleep(0.05)
 
