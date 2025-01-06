@@ -29,14 +29,6 @@ def stop_motors():
     set_motor_speed(motor2_forward_pwm, 0)
     set_motor_speed(motor2_backward_pwm, 0)
 
-def button_L_1():
-    print("Joystick button left!")
-def button_L_2():
-def button_L_3():
-def button_R_1():
-def button_R_2():
-def button_R_3():
-
 pygame.init()
 joystick = pygame.joystick.Joystick(0)
 joystick.init()
@@ -45,19 +37,7 @@ max_speed = 100
 
 try:
     while True:
-        #setup information like battery, controller type, axes, etc.
-        draw_text("Controllers: " + str(pygame.joystick.get_count()), font, pygame.Color("azure"), 10, 10)
-        for joystick in joysticks:
-            draw_text("Battery Level: " + str(joystick.get_power_level()), font, pygame.Color("azure"), 10, 35)
-            draw_text("Controller Type: " + str(joystick.get_name()), font, pygame.Color("azure"), 10, 60)
-            draw_text("Number of axes: " + str(joystick.get_numaxes()), font, pygame.Color("azure"), 10, 85)
-        #detect button press on any of the buttons
-        for joystick in joysticks:
-            if joystick.get_button(7):
-                button_L_1()
         pygame.event.pump()
-        
-        #move motors with PWM setup using joystick input
         axis_x = joystick.get_axis(0)  # Get X-axis value of joystick
         axis_y = -joystick.get_axis(1)  # Get Y-axis value of joystick and invert
         
