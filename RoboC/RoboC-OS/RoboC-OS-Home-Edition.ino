@@ -70,7 +70,7 @@ typedef enum{ANDROID, PS1, PC} GamepadModes;
 GamepadModes gamepadMode = PS1;
 
 
-BleGamepad bleGamepad("Maker101 Gamepad", "Maker101 Home");
+BleGamepad bleGamepad("RoboC Home", "RoboC");
 BleGamepadConfiguration bleGamepadConfig;  
 
 
