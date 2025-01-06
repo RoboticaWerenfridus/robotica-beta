@@ -61,8 +61,8 @@ def action_square():
 
 def action_al():
     print("Analog button left pressed! Executing action AL")
-# Mapping buttons to their respective actions
 
+# Mapping buttons to their respective actions
 button_function_mapping = {
     0: action_x,
     1: action_circle,
@@ -70,6 +70,12 @@ button_function_mapping = {
     3: action_triangle,
     10: action_al,
 }
+
+# Store the last press time for each button
+last_press_time = {button_id: 0 for button_id in button_function_mapping}
+
+# Define cooldown time in seconds
+cooldown_time = 1  # 1 second cooldown for each button
 
 # Start the main loop
 try:
@@ -99,12 +105,20 @@ try:
             set_motor_speed(motor2_forward_pwm, 0)
             set_motor_speed(motor2_backward_pwm, speed_motor2_dc)
 
-        # Check if any button is pressed and execute the corresponding function
+        # Check if any button is pressed and execute the corresponding function with cooldown
         for button_id in range(4):  # Only check X, Circle, Square, Triangle buttons
             if joystick.get_button(button_id):
-                button_function_mapping.get(button_id, lambda: print(f"Button {button_id} pressed!"))()
-        if joystick.get_button(10):
-            button_function_mapping.get(10, lambda: print(f"Button 10 pressed!"))()
+                current_time = time.time()
+                if current_time - last_press_time[button_id] >= cooldown_time:
+                    last_press_time[button_id] = current_time
+                    button_function_mapping.get(button_id, lambda: print(f"Button {button_id} pressed!"))()
+        
+        if joystick.get_button(10):  # Analog button left
+            current_time = time.time()
+            if current_time - last_press_time[10] >= cooldown_time:
+                last_press_time[10] = current_time
+                button_function_mapping.get(10, lambda: print(f"Button 10 pressed!"))()
+        
         time.sleep(0.05)
 
 except KeyboardInterrupt:
