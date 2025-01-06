@@ -105,7 +105,7 @@ try:
                 button_function_mapping.get(button_id, lambda: print(f"Button {button_id} pressed!"))()
         if joystick.get_button(10):
             button_function_mapping.get(10, lambda: print(f"Button 10 pressed!"))()
-        time.sleep(0.10)
+        time.sleep(0.05)
 
 except KeyboardInterrupt:
     stop_motors()
