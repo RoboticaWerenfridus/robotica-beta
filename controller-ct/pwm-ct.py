@@ -34,19 +34,6 @@ joystick = pygame.joystick.Joystick(0)
 joystick.init()
 
 max_speed = 100
-button_actions = {
-    0: "X",  # X button
-    3: "Triangle",  # Triangle button
-    1: "Circle",  # Circle button
-    2: "Square",  # Square button
-}
-
-def handle_button_action(button_id):
-    # Leave button actions empty (no motor control for buttons)
-    action = button_actions.get(button_id)
-    if action:
-        print(f"Button {action} pressed!")
-        # No specific actions for buttons are defined here
 
 # Start the main loop
 try:
@@ -75,11 +62,6 @@ try:
         else:
             set_motor_speed(motor2_forward_pwm, 0)
             set_motor_speed(motor2_backward_pwm, speed_motor2_dc)
-
-        # Check if any button is pressed
-        for button_id in range(4):  # Only check X, Circle, Square, Triangle buttons
-            if joystick.get_button(button_id):
-                handle_button_action(button_id)
         
         time.sleep(0.05)
 
